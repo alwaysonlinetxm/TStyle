@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>3D盒子翻转</title>
+  <link rel="stylesheet" href="T3DBox.css">
+  <link rel="stylesheet" href="../../css/TBase.css">
+  <script type="text/javascript" charset="UTF-8" src="../../js/prefixfree.min.js"></script>
+  <style rel="stylesheet">
+	body {
+		margin-top: 5em;
+		text-align: center;
+		color: #414142;
+		background: rgb(246,241,232);
+		background: -moz-radial-gradient(center, ellipse cover,  rgba(246,241,232,1) 39%, rgba(212,204,186,1) 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(39%,rgba(246,241,232,1)), color-stop(100%,rgba(212,204,186,1)));
+		background: -webkit-radial-gradient(center, ellipse cover,  rgba(246,241,232,1) 39%,rgba(212,204,186,1) 100%);
+		background: -o-radial-gradient(center, ellipse cover,  rgba(246,241,232,1) 39%,rgba(212,204,186,1) 100%);
+		background: -ms-radial-gradient(center, ellipse cover,  rgba(246,241,232,1) 39%,rgba(212,204,186,1) 100%);
+		background: radial-gradient(center, ellipse cover,  rgba(246,241,232,1) 39%,rgba(212,204,186,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f1e8', endColorstr='#d4ccba',GradientType=1 );
+	}
+	
+	h1, em, #information {
+		display: block;
+		font-size: 25px;
+		font-weight: normal;
+		font-family: "Graduate";
+		margin: 2em auto;
+	}
+	
+	#information {
+		color: red;
+		font-size: 14px;
+	}
+	
+	#container {
+		display: block;
+		margin: 0 auto;
+		width: 1024px;
+	}
+	
+	#container > div {
+		margin: 20px 10px;
+	}
+  </style>
+</head>
+<body>
+  <div id="container">
+  
+    <div class="T3DBox T3DBoxResize">
+      <div class="T3DBox-item">
+        <img src="images/contact.png" class="T3DBox-img" />
+        <span class="T3DBox-info">
+          <strong>Contact Form</strong> The easiest way to add a contact form to your shop.
+        </span>
+      </div>
+    </div>
+    
+    <div class="T3DBox T3DBoxResize">
+      <div class="T3DBox-item">
+        <img src="images/chimpified.jpeg" class="T3DBox-img" />
+        <span class="T3DBox-info">
+          <strong>Chimpified</strong> Chimpified connects your Shopify store to your Mailchimp account.
+        </span>
+      </div>
+    </div>
+    
+    <div class="T3DBox T3DBoxResize">
+      <div class="T3DBox-item">
+        <img src="images/olark.png" class="T3DBox-img" />
+        <span class="T3DBox-info">
+          <strong>Olark Chat</strong> Chat with your customers. Watch them fill their shopping carts.
+        </span>
+      </div>
+    </div>
+    
+    <div class="T3DBox T3DBoxResize">
+      <div class="T3DBox-item">
+        <img src="images/jilt.png" class="T3DBox-img" />
+        <span class="T3DBox-info">
+          <strong>Jilt</strong> Jilt lets you easily and effectively follow up with customers who have abandoned their orders.
+        </span>
+      </div>
+    </div>
+	
+    <div class="T3DBox T3DBoxResize">
+      <div class="T3DBox-item">
+        <img src="images/ordoro.png" class="T3DBox-img" />
+        <span class="T3DBox-info">
+          <strong>Ordoro</strong> Automate your backoffice: aggregate orders, manage inventory, print shipping labels.
+        </span>
+      </div>
+    </div>
+	
+    <div class="T3DBox T3DBoxResize">
+      <div class="T3DBox-item">
+        <img src="images/yotpo.jpeg" class="T3DBox-img" />
+        <span class="T3DBox-info">
+          <strong>Yotpo</strong> Social reviewing solution,increase your social engagement through social reviews.
+        </span>
+      </div>
+    </div>
+    
+  </div>  
+  
+  <span id="information" style="display:none">Your browser doesn't support CSS3 3D Transform</span>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>纯JS省市区联动</title>
+</head>
+<body>
+<div>
+<select id="cmbProvince"></select>
+<select id="cmbCity"></select>
+<select id="cmbArea"></select>
+<input type="button" name="" onclick="alert(address.getAddress(' ')+' '+address.getAddress(' ').length)" value="show"/>
+<br /><br />
+<select id="Select1"></select>
+<select id="Select2"></select>
+<select id="Select3"></select>
+<input type="button" name="" onclick="alert(address2.getAddress(' ')+' '+address2.getAddress(' ').length)" value="show"/>
+<script type="text/javascript" src="../../js/TStyle-old.js"></script>
+<script type="text/javascript" src="TAddress.js"></script>
+<script type="text/javascript">
+	var address = new TAddress($('#cmbProvince'), $('#cmbCity'), $('#cmbArea'), '陕西省', '宝鸡市', '金台区');
+	var address2 = new TAddress($('#Select1'), $('#Select2'));
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<html dir="ltr" lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+		<link rel="stylesheet" type="text/css" href="style.css" media="all"/>
+        <title>缓动BY司徒正美</title>
+    </head>
+    <body>
+        <div class="taxiway">
+            <div class="move" onclick="TTween.transition($('.move')[0],{field:'left',begin:parseFloat(getCoords(this).left),change:700,ease:TTween.bouncePast})"></div>
+        </div>
+        <div class="taxiway">
+            <div class="move" onclick="TTween.transition($('.move')[1],{field:'width',begin:parseFloat(getStyle(this,'width')),change:300,ease:TTween.spring})"></div>
+        </div>
+<span class="clear"></span>
+<h2>请点击下表的格子</h2>
+        <div id="transition" class="transition">
+
+        </div>
+    
+    </body>
+	<script type="text/javascript" src = "../../js/TStyle-old.js"></script>
+	<script type="text/javascript" src = "script.js"></script>
+	<script type="text/javascript" src = "TTween.js"></script>
+</html>

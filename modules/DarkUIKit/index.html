@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>TDarkUI</title>
+    <script type="text/javascript" charset="UTF-8" src="../../js/prefixfree.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/TBase.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="TDarkUI.css" media="all">
+	<style type="text/css">
+	body {
+		background: url(images/bg.jpg);
+		font-family: Arial,Helvetica,Geneva,Verdana,sans-serif;
+	}	
+	.container {
+		width: 700px;
+		border: 1px dashed #fff;
+		margin: 0 auto;
+		padding: 50px 20px;
+		-*-box-sizing:border-box;
+		box-sizing: border-box; <!-- IE -->
+	}	
+	.row {
+		margin: 20px 0;
+	}
+	.row div[class*="span"] {
+		float: left;
+	}
+	.row:after {
+		content: "";
+		width: 0;
+		height: 0;
+		display: block;
+		clear:both;
+		visibility:hidden;
+	}
+	
+	.span2 {width: 20%;}
+	.span4 {width: 33%;}
+	.span10 {width: 80%;}
+	
+	.font0 {font-size: 0;} <!-- 为去除子元素inline-block的间隙 -->
+	.TDark-input {
+		margin-right: 20px;
+	}
+	</style>
+</head>
+<body>
+    <div class="container TClearfix">
+		<!-- The navigation -->
+		<div class="TDark-navbar">
+			<ul class="TDark-nav TClearfix">
+				<li><a href="">Menu</a></li>
+				<li><a href="">Menu</a></li>
+				<li><a href="">Menu</a></li>
+				<li><a href="">Menu</a></li>
+			</ul>
+			<form class="TDark-navbar-search">
+				<div class="TDark-input-append">
+					<input type="text" placeholder="Search..." />
+					<a class="TDark-icon-search" >x</a>
+				</div>
+			</form>
+		</div>
+		<!-- The form -->
+		<div>
+			<div class="row">
+				<!-- The input -->
+				<input class="TDark-input" type="text" placeholder="Name..." />
+				<input class="TDark-input" type="text" placeholder="Email..." />
+				<input class="TDark-input TDark-round" type="text" placeholder="Password..." />
+			</div>
+			<div class="row">
+				<div class="span4">
+					<div class="row font0">
+						<!-- The checkbox -->
+						<span class="TDark-checkbox">
+							<input type="checkbox" id="TDark-checkbox1" name="ckeckbox" />
+							<label for="TDark-checkbox1" data-on="a"></label>
+						</span>
+						<span class="TDark-checkbox">
+							<input type="checkbox" id="TDark-checkbox2" name="ckeckbox" />
+							<label for="TDark-checkbox2" data-on="a"></label>
+						</span>
+						<span class="TDark-checkbox">
+							<input type="checkbox" id="TDark-checkbox3" name="ckeckbox" checked="checked" />
+							<label for="TDark-checkbox3" data-on="a"></label>
+						</span>
+						<!-- the radio -->
+						<span class="TDark-radio">
+							<input type="radio" id="TDark-radio1" name="radio" />
+							<label for="TDark-radio1"></label>
+						</span>
+						<span class="TDark-radio">
+							<input type="radio" id="TDark-radio2" name="radio" />
+							<label for="TDark-radio2"></label>
+						</span>
+						<span class="TDark-radio">
+							<input type="radio" id="TDark-radio3" name="radio" checked="checked" />
+							<label for="TDark-radio3"></label>
+						</span>
+					</div>
+
+						<div class="row">
+							<div class="sliderbar sliderbar-bothway show-value" data-type="bothway">
+								<div class="slider-range"></div>
+								<a class="slider-handle left-handle">|||</a>
+								<a class="slider-handle right-handle">|||</a>
+							</div>
+							<div class="sliderbar sliderbar-oneway" data-type="oneway">
+								<div class="slider-range"></div>
+								<a class="slider-handle"></a>
+							</div>
+							<div class="sliderbar sliderbar-bothway " data-type="bothway">
+								<div class="slider-range"></div>
+								<a class="slider-handle left-handle"></a>
+								<a class="slider-handle right-handle"></a>
+							</div>
+						</div>
+					</div>
+					<div class="span4">
+						<div class="select">
+							<span class="value">select</span>
+							<ul>
+								<li class="option o1">Volvo</li>
+								<li class="option o2">Saab</li>
+								<li class="option o3">Opel</li>
+								<li class="option o4">Audi</li>
+							</ul>
+							<select>
+							  <option value="volvo">Volvo</option>
+							  <option value="saab">Saab</option>
+							  <option value="opel">Opel</option>
+							  <option value="audi">Audi</option>
+							</select>
+						</div>
+						<div class="row" style="margin-top:100px;">
+							<span class="switcher" style="margin-right:30px;">
+								<input type="checkbox" id="switcher1" checked="checked" />
+								<label for="switcher1" data-off="OFF" data-on="ON"></label>
+							</span><span class="switcher">
+								<input type="checkbox" id="switcher2" />
+								<label for="switcher2" data-off="OFF" data-on="ON"></label>
+							</span>
+						</div>
+					</div>
+					<div class="span4">
+						<form action class="login-form">
+							<h4 class="title">Login</h4>
+							<input type="text" class="e-mail" name="e-mail" placeholder="E-mail..." />
+							<input type="text" class="password" name="password" placeholder="Password..." />
+							<input type="submit" class="sign-in" name="sign-in" value="sign-in" />
+							<div class="remember-me">
+								<input type="checkbox" id="remember-me" name="remember-me" /><label for="remember-me" data-on="a">
+								</label><label class="info" for="remember-me">Remember me</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- The buttons -->
+			<div style="margin-top:20px;">
+				<div class="row">
+					<div class="span10">
+						<div class="row">
+							<button class="btn">Button</button>
+							<button class="btn light-green">Button</button>
+							<button class="btn blue">Button</button>
+							<button class="btn gray">Button</button>
+							<button class="btn red">Button</button>
+						</div>
+						<div class="row">
+							<button class="btn btn-icon-like" data-icon="b">like</button>
+							<button class="btn btn-icon-next" data-icon="d">next</button>
+							<button class="btn btn-icon-prev" data-icon="e">prev</button>
+							<button class="btn btn-icon-cancel" data-icon="g">cancel</button>
+							<button class="btn btn-icon-bookmark" data-icon="h">bookmark</button>
+						</div>
+						<div class="row">
+							<button class="btn btn-icon-comment" data-icon="i">comment</button>
+							<button class="btn btn-icon-add-new" data-icon="j">add new</button>
+							<button class="btn btn-icon-messages" data-icon="k">messages</button>
+							<button class="btn btn-icon-download" data-icon="l">download</button>
+							<button class="btn btn-icon-share" data-icon="m">share</button>
+						</div>
+					</div>
+					<div class="span2">
+						<div class="row">
+							<div class="row"><span class="tooltip red">Tooltip</span></div>
+							<div class="row"><span class="tooltip light-green">Tooltip</span></div>
+							<div class="row"><span class="tooltip blue">Tooltip</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<a class="btn-share-twitter">n<span class="counter">230</span></a>
+					<a class="btn-share-stumbleupon">o<span class="counter">365</span></a>
+					<a class="btn-share-fb">p<span class="counter">42</span></a>
+					<a class="btn-share-rss">q<span class="counter">9</span></a>
+				</div>
+			</div>
+			<!-- The Comment block -->
+			<div style="margin-top:40px;">
+				<div class="comment-block TClearfix">
+					<div class="main-block">
+						<a href="" class="avatar"></a>
+						<div class="content">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing 
+	elit. Aenean commodo ligula eget dolor. Aenean 
+	massa. Cum sociis natoque penatibus et.</p>
+							<div class="interation">
+								<a href="" class="like">b<span class="counter">81</span></a>
+								<a href="" class="comment-bubble">i<span class="counter">25</span></a>
+								<button class="reply">Reply</button>
+							</div>
+						</div>
+					</div>
+					<div class="reply-block">
+						<a href="" class="avatar"></a>
+						<div class="content">
+							<p> Lorem ipsum dolor sit amet, consectetuer adipiscing 
+								elit. Aenean commodo ligula eget dolor. Aenean 
+								massa. Cum sociis natoque penatibus et.</p>
+							<div class="interation">
+								<a href="" class="like">b<span class="counter">75</span></a>
+								<a href="" class="comment-bubble">i<span class="counter">5</span></a>
+								<span class="reply-info">in reoly to xxxx</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- The Carousel -->
+			<div style="margin-top:80px;">
+				<div id="myCarousel">
+					<ol class="carousel-indicators">
+						<li data-reference="1" class="active"></li>
+						<li data-reference="2"></li>
+						<li data-reference="3"></li>
+						<li data-reference="4"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active"><img src="http://www.w3cplus.com/sites/default/files/baiyaimages/p1.jpg"><p class="description">Carousel in Dark UI Carousel in Dark UI</p></div>
+						<div class="item"><img src="http://www.w3cplus.com/sites/default/files/baiyaimages/p2.jpg"><p class="description">Carousel in Dark UI Carousel in Dark UI</p></div>
+						<div class="item"><img src="http://www.w3cplus.com/sites/default/files/baiyaimages/p3.jpg"><p class="description">Carousel in Dark UI Carousel in Dark UI</p></div>
+						<div class="item"><img src="http://www.w3cplus.com/sites/default/files/baiyaimages/p4.jpg"><p class="description">Carousel in Dark UI Carousel in Dark UI</p></div>
+					</div>
+					<div class="left carousel-control"></div>
+					<div class="right carousel-control"></div>
+				</div>
+			</div>
+			<!-- The Video -->
+			<div style="margin-top:80px;">
+				<div id="myVideo" style="width:464px;margin:0 auto;">
+					<div class="topbar TClearfix">
+						<span class="title">video title</span>
+						<a href="" class="like">b<span class="counter">75</span></a>
+						<div class="share" data-icon="m">
+							<a>Share</a>
+							<div class="dropdown">
+								<ul class="wrapper ">
+									<li class="twitter">n</li>
+									<li class="facebook">p</li>
+									<li class="stumbleupon">o</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<video width="464px" preload="" poster="poster.jpg">
+						<source src="http://vjs.zencdn.net/v/oceans.webm"  type="video/webm" />
+						<p>Your browser does not support the video tag.</p>
+					</video>
+					<div class="control">
+						<button class="btn-play">t</button>
+						<div class="progress">
+							<div class="base-bar">
+								<div class="progress-bar"></div>
+							</div>
+						</div>
+						<div class="volum">
+							<a class="volume-decrease">r</a>
+							<div class="base-bar">				
+								<div class="progress-bar"></div>
+							</div>
+							<a class="volume-increase">s</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

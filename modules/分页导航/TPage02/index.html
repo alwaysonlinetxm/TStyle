@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>TPage02</title>
+	<link rel="stylesheet" href="../../../css/TBase.css">
+	<link rel="stylesheet" href="TPage02.css">
+	<script type="text/javascript" charset="UTF-8" src="../../../js/prefixfree.min.js"></script>
+	<style>
+body {
+	background-color: #262626;
+}
+.demo {
+	width: 400px;
+    margin: 40px auto 0;
+}
+	</style>
+</head>
+<body>
+	<section class="demo">
+		<ul class="TPage02" id="page">
+	        <li><a href="#">« First</a></li>
+	        <li><a href="#">«</a></li>
+	        <li><a href="#">»</a></li>
+	        <li><a href="#">Last »</a></li>
+   		</ul>
+	</section>
+	<p id="show"></p>
+</body>
+<script type="text/javascript" charset="UTF-8" src="../../../js/TStyle-old.js"></script>
+<script type="text/javascript" charset="UTF-8" src="../TPages.js"></script>
+<script type="text/javascript" charset="UTF-8">
+	var a = new TPages($("#page"), 5, showPage, "TPage02-selected", 1);
+	
+function showPage(n){
+	alert(n);
+}
+</script>
+</html>

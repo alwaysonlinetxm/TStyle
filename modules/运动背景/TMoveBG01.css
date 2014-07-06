@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* -------------------------------------------------
+ * TMoveBG01 css 
+ * source: w3cplus
+ * link: http://www.w3cplus.com/demo/417.html
+ * adapt: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+.TMoveBG01 {
+	background:url('images/foreground.png') 5px 5px,url("images/midground.png") 1050px 750px,url("images/background.png") 1000px -50px;
+
+	-moz-animation-name:TMoveBG01;
+	-moz-animation-duration:30s;
+	-moz-animation-timing-function:linear;
+	-moz-animation-delay:0;
+	-moz-animation-iteration-count:infinite;
+		
+	-webkit-animation-name:TMoveBG01;
+	-webkit-animation-duration:30s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-delay:0;
+	-webkit-animation-iteration-count:infinite;
+		
+	animation-name:TMoveBG01;
+	animation-duration:30s;
+	animation-timing-function:linear;
+	animation-delay:0;
+	animation-iteration-count:infinite;
+}
+@-moz-keyframes TMoveBG01{
+    0%{
+        background:url('images/foreground.png') 5px 5px,url("images/midground.png") 1050px 750px,url("images/background.png") 1000px -50px;
+    }
+    100%{
+        background:url('images/foreground.png') 2005px 1005px,url("images/midground.png") 50px -250px,url("images/background.png") 0 950px;
+
+    }
+}
+@-webkit-keyframes TMoveBG01{
+    0%{
+        background:url('images/foreground.png') 5px 5px,url("images/midground.png") 1050px 750px,url("images/background.png") 1000px -50px;
+    }
+    100%{
+        background:url('images/foreground.png') 2005px 1005px,url("images/midground.png") 50px -250px,url("images/background.png") 0 950px;
+    }
+}
+@keyframes TMoveBG01{
+    0%{
+        background:url('images/foreground.png') 5px 5px,url("images/midground.png") 1050px 750px,url("images/background.png") 1000px -50px;
+    }
+    100%{
+        background:url('images/foreground.png') 2005px 1005px,url("images/midground.png") 50px -250px,url("images/background.png") 0 950px;
+    }
+}

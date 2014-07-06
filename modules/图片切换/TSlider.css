@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* -------------------------------------------------
+ * TSlider css 
+ * source: w3cplus
+ * link: http://www.w3cplus.com/demo/404.html
+ * adapt: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+
+.TSlider {
+	width: 680px;
+	height: 320px;	
+	overflow: hidden;
+}
+
+.TSlider ul{
+	position: relative;
+}
+
+.TSlider li {
+	width: 680px;
+	height: 320px;
+	position: absolute;
+	top: -325px;
+}
+
+.TSlider li.TSlider-img1 {
+	-*-animation: TSlider-cycle1 25s linear infinite;		
+}
+.TSlider li.TSlider-img2 {
+	-*-animation: TSlider-cycle2 25s linear infinite;		
+}
+.TSlider li.TSlider-img3{
+	-*-animation:TSlider-cycle3 25s linear infinite;		
+}
+.TSlider li.TSlider-img4 {
+	-*-animation:TSlider-cycle4 25s linear infinite;	
+}
+.TSlider li.TSlider-img5 {
+	-*-animation:TSlider-cycle5 25s linear infinite;		
+}
+
+.TSlider .TSlider-tip {
+	background:rgba(0,0,0,0.7);
+	width:300px;
+	height:60px;
+	position:relative;
+	bottom:75px;
+	left:-320px;
+	color:#fff;
+	font-size:24px;
+	font-weight:300;
+	line-height:60px;
+	padding:0 0 0 20px;
+	-*-transition:all 0.3s ease-in-out;
+}
+
+.TSlider li.TSlider-img1:hover .TSlider-tip, 
+.TSlider li.TSlider-img2:hover .TSlider-tip, 
+.TSlider li.TSlider-img3:hover .TSlider-tip, 
+.TSlider li.TSlider-img4:hover .TSlider-tip, 
+.TSlider li.TSlider-img5:hover .TSlider-tip {
+	left:0px;
+}
+.TSlider:hover li, 
+.TSlider:hover .TSlider-bar {
+	-*-animation-play-state:paused;
+}
+
+/* 进度条 */
+.TSlider-bar { 
+	position:relative;
+	top: 315px; /* 图片高度减去5px */
+	width:680px; 
+	height:5px;
+	background: #000;
+	-*-animation:TSlider-fullbar 25s ease-out infinite;
+}
+
+/* ANIMATION */
+@-*-keyframes TSlider-cycle1 {
+	0%  { top:0px; }
+	4%  { top:0px; } 
+	16% { top:0px; opacity:1; z-index:0; } 
+	20% { top:325px; opacity:0; z-index:0; } 
+	21% { top:-325px; opacity:0; z-index:-1; }
+	92% { top:-325px; opacity:0; z-index:0; }
+	96% { top:-325px; opacity:0; }
+	100%{ top:0px; opacity:1; }
+	
+}
+@-*-keyframes TSlider-cycle2 {
+	0%  { top:-325px; opacity:0; }
+	16% { top:-325px; opacity:0; }
+	20% { top:0px; opacity:1; }
+	24% { top:0px; opacity:1; } 
+	36% { top:0px; opacity:1; z-index:0; } 
+	40% { top:325px; opacity:0; z-index:0; }
+	41% { top:-325px; opacity:0; z-index:-1; } 
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-*-keyframes TSlider-cycle3 {
+	0%  { top:-325px; opacity:0; }
+	36% { top:-325px; opacity:0; }
+	40% { top:0px; opacity:1; }
+	44% { top:0px; opacity:1; } 
+	56% { top:0px; opacity:1; } 
+	60% { top:325px; opacity:0; z-index:0; }
+	61% { top:-325px; opacity:0; z-index:-1; } 
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-*-keyframes TSlider-cycle4 {
+	0%  { top:-325px; opacity:0; }
+	56% { top:-325px; opacity:0; }
+	60% { top:0px; opacity:1; }
+	64% { top:0px; opacity:1; }
+	76% { top:0px; opacity:1; z-index:0; }
+	80% { top:325px; opacity:0; z-index:0; }
+	81% { top:-325px; opacity:0; z-index:-1; }
+	100%{ top:-325px; opacity:0; z-index:-1; }
+}
+@-*-keyframes TSlider-cycle5 {
+	0%  { top:-325px; opacity:0; }
+	76% { top:-325px; opacity:0; }
+	80% { top:0px; opacity:1; }
+	84% { top:0px; opacity:1; }
+	96% { top:0px; opacity:1; z-index:0; }
+	100%{ top:325px; opacity:0; z-index:0; }
+}
+
+/* ANIMATION BAR */
+@-*-keyframes TSlider-fullbar {
+    0%, 20%, 40%, 60%, 80%, 100% { width:0%; opacity:0; }
+    4%, 24%, 44%, 64%, 84% { width:0%; opacity:0.3; }
+   16%, 36%, 56%, 76%, 96% { width:100%; opacity:0.7; }
+   17%, 37%, 57%, 77%, 97% { width:100%; opacity:0.3; }
+   18%, 38%, 58%, 78%, 98% { width:100%; opacity:0; }	
+}

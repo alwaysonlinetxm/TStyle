@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>TPlayer01</title>
+	<link rel="stylesheet" href="../../../css/TBase.css">
+	<link rel="stylesheet" href="TPlayer01.css">
+	<script type="text/javascript" charset="UTF-8" src="../../../js/prefixfree.min.js"></script>
+	<style type="text/css">
+		@font-face {
+			font-family: 'icomoon';
+			src:url('font/icomoon.eot');
+			src:url('font/icomoon.eot?#iefix') format('embedded-opentype'),
+				url('font/icomoon.woff') format('woff'),
+				url('font/icomoon.ttf') format('truetype'),
+				url('font/icomoon.svg#icomoon') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		.player {
+			margin: 20px auto;
+		}
+		.list-title, .song-list li {
+			width: 150px;
+			margin: 10px auto 0;
+		}
+	</style>	
+</head>
+<body>
+	<p class="list-title">曲目列表：</p>
+	<ul class="song-list">
+		<li>1 萧敬腾 - 以爱之名</li>
+		<li>2 萧敬腾 - 福尔摩斯</li>
+		<li>3 萧敬腾 - 爸爸</li>
+		<li>4 萧敬腾 - Marry Me</li>
+		<li>5 萧敬腾 - 不正常</li>
+		<li>6 萧敬腾 - 活在故事里</li>
+		<li>7 萧敬腾 - 如果</li>
+		<li>8 萧敬腾 - 兄弟我说</li>
+		<li>9 萧敬腾 - 练习曲</li>
+		<li>10 萧敬腾 - 纯金打造</li>
+		<li>11 萧敬腾 - 你知道吗</li>
+	</ul>
+	<audio id="song-play">
+		<source id="mp3" type="audio/mpeg"/>
+		<source id="ogg" type="audio/ogg"/>
+	</audio>
+	<div class="TPlayer01 TClearfix player">
+		<div class="TPlayer01-button">
+			<span class="TPlayer01-previous"></span>
+			<span class="TPlayer01-pause"></span>
+			<span class="TPlayer01-stop"></span>
+			<span class="TPlayer01-next"></span>
+		</div>
+		<div class="TPlayer01-content">
+			<div class="TPlayer01-song">&nbsp;&nbsp;当前曲目：<p class="TPlayer01-current-container"><span class="TPlayer01-current-info"></span></p></div>
+			<div class="TPlayer01-bar">
+				<div class="TPlayer01-bar-inset"></div>
+				<span class="TPlayer01-end"></span>
+			</div>
+		</div>
+		<div class="TPlayer01-right">
+			<span class="TPlayer01-volume-icon"></span>
+			<div class="TPlayer01-volume">
+				<div class="TPlayer01-volume-inset"></div>
+				<span class="TPlayer01-end"></span>
+			</div>
+			<p class="TPlayer01-time"><span class="TPlayer01-currentTime">00:00</span>/<span class="TPlayer01-duration">00:00</span></p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" charset="UTF-8" src="../../../js/TStyle-old.js"></script>
+<script type="text/javascript" charset="UTF-8" src="../TPlayer.js"></script>
+<script type="text/javascript" charset="UTF-8">
+	//播放器配置参数
+	var config = {
+		media: $("#song-play"),
+		source: [$("#mp3"), $("#ogg")],
+		previous: $(".TPlayer01-previous")[0],
+		next: $(".TPlayer01-next")[0],
+		play: {
+			play: $(".TPlayer01-pause")[0],
+			playClass: "TPlayer01-play",
+			pauseClass: "TPlayer01-pause"
+		},
+		stop: $(".TPlayer01-stop")[0],
+		currentInfo:$(".TPlayer01-current-info")[0],
+		bar: {
+			bar: $(".TPlayer01-bar")[0],
+			length: 212,
+			barInset: $(".TPlayer01-bar-inset")[0],
+			barEnd: $(".TPlayer01-bar")[0].getElementsByClassName("TPlayer01-end")[0]
+		},
+		volume: {
+			volume: $(".TPlayer01-volume")[0],
+			length: 40,
+			volumeInset: $(".TPlayer01-volume-inset")[0],
+			volumeEnd: $(".TPlayer01-volume")[0].getElementsByClassName("TPlayer01-end")[0],
+			volumeClass: "TPlayer01-volume-icon",
+			muteClass: "TPlayer01-mute-icon",
+			volumeIcon: $(".TPlayer01-volume-icon")[0]
+		},
+		time: {
+			current: $(".TPlayer01-currentTime")[0],
+			duration: $(".TPlayer01-duration")[0]
+		}
+	};
+	//创建播放器
+	var player = new TPlayer(config);
+	//为播放器添加曲目
+	player.addSong("萧敬腾 - 以爱之名", ["../audio/xjt-yiaizhiming.mp3", "../audio/xjt-yiaizhiming.ogg"]);
+	player.addSong("萧敬腾 - 福尔摩斯", ["../audio/xjt-fuermosi.mp3", "../audio/xjt-fuermosi.ogg"]);
+	player.addSong("萧敬腾 - 爸爸", ["../audio/xjt-baba.mp3", "../audio/xjt-baba.ogg"]);
+	player.addSong("萧敬腾 - Marry Me", ["../audio/xjt-merryme.mp3", "../audio/xjt-merryme.ogg"]);
+	player.addSong("萧敬腾 - 不正常", ["../audio/xjt-buzhengchang.mp3", "../audio/xjt-buzhengchang.ogg"]);
+	player.addSong("萧敬腾 - 活在故事里", ["../audio/xjt-huozaigushili.mp3", "../audio/xjt-huozaigushili.ogg"]);
+	player.addSong("萧敬腾 - 如果", ["../audio/xjt-ruguo.mp3", "../audio/xjt-ruguo.ogg"]);
+	player.addSong("萧敬腾 - 兄弟我说", ["../audio/xjt-xiongdiwoshuo.mp3", "../audio/xjt-xiongdiwoshuo.ogg"]);
+	player.addSong("萧敬腾 - 练习曲", ["../audio/xjt-lianxiqu.mp3", "../audio/xjt-lianxiqu.ogg"]);
+	player.addSong("萧敬腾 - 纯金打造", ["../audio/xjt-chunjindazao.mp3", "../audio/xjt-chunjindazao.ogg"]);
+	player.addSong("萧敬腾 - 你知道吗", ["../audio/xjt-nizhidaoma.mp3", "../audio/xjt-nizhidaoma.ogg"]);
+	//设置初始曲目
+	player.setCurrentInfo(0, true, 130);
+	player.setCurrentSong(0, true);
+</script>
+</html>

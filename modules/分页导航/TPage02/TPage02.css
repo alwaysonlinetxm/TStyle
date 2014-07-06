@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* -------------------------------------------------
+ * TPage02 css 
+ * source: w3cplus
+ * link: http://www.w3cplus.com/demo/pure-css3-create-pagination.html
+ * adapt: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+.TPage02 li {
+	display: inline-block;
+	line-height: 25px;
+	margin: 0 1.5px;
+}
+.TPage02 a {
+	display: block;
+	color: #f2f2f2;
+	text-shadow: 1px 0 0 #101011;
+	padding: 0 10px;
+	border-radius: 2px;
+	box-shadow: 0 1px 0 #5a5b5c inset,0 1px 0 #080808;
+	background: -*-linear-gradient(top,#434345,#2f3032);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434345', endColorstr='#2f3032',GradientType=0 );
+}
+.TPage02 a:hover {
+	text-decoration: none;
+	box-shadow: 0 1px 0 #f9bd71 inset,0 1px 0 #0a0a0a;
+	background: -*-linear-gradient(top,#f48b03,#c87100);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b03', endColorstr='#c87100',GradientType=0 );
+}
+.TPage02 a:active, 
+.TPage02 a.TPage02-selected {
+	box-shadow: 1px 0 5px #1a1a1b inset,1px 0 0 #2d2d2d,0 1px 0 #2d2d2d;
+	background: -*-linear-gradient(top,#252627,#1c1c1e);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252627', endColorstr='#2d2d2d',GradientType=0 );
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ImgClip</title>
+  <style>
+    canvas{
+	   border: 1px solid #999;
+	   vertical-align: top;
+	}
+	#TPreview{
+	   position: relative;
+	}
+  </style>
+</head>
+<body>
+  <div>
+    <input type='file' name='upload' onchange='imgChange(this)'/><br />
+	<!-- 在FF中必须将预览canvas的position设为absolute或relative -->
+    <canvas id='TPreview' width='450' height='450'></canvas>
+    <canvas id='TResult' width='160' height='160'></canvas>
+  </div>
+</body>
+<script type="text/javascript" src="../../js/TStyle-old.js"></script>
+<script type="text/javascript" src="TImgClip.js"></script>
+<script type="text/javascript">
+var imgClip = new TImgClip(450.0, 160.0, $("#TPreview"), $("#TResult"));
+function imgChange(file){
+	imgClip.loadImg(file);
+	//imgClip.loadImg("4d0149f5104e42dc6d95df22414c9e66.jpeg"); //直接传入路径
+}
+</script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>T3DCube</title>
+	<link href="T3DCube.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/TBase.css" rel="stylesheet" type="text/css"/>
+	<style type="text/css" media="screen" >
+		body {
+			background-color: black;
+			color: white;
+			font-family: 'Lucida Grande', Verdana, Arial;
+			font-size: 12px;
+			background-image: radial-gradient(50% 500px, circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+			background-image: -ms-radial-gradient(50% 500px, circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+			background-image: -moz-radial-gradient(50% 500px, circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+			background-image: -webkit-radial-gradient(50% 500px, circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+			background-repeat: no-repeat;
+		}
+		
+		.controls {
+			width: 80%;
+			margin: 0 auto;
+			padding: 5px 20px;
+			border-radius: 12px;
+			-moz-border-radius: 12px;
+			-webkit-border-radius: 12px;	  
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+		
+		.controls > div {
+			margin: 10px;
+		}
+		
+		.T3DCube {
+			width: 100%;
+			height: 500px;
+		}
+		
+		.T3DCube-stage {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script type="text/javascript" src="../../js/TStyle.js"></script> 
+	<script type="text/javascript" charset="utf-8">  
+		function toggleShape(){
+			var shape = document.getElementById('shape');
+			if ($.hasClass(shape, 'T3DCube-ring')) {
+				$.removeClass(shape, 'T3DCube-ring');
+				$.addClass(shape, 'T3DCube-cube');
+			} else {
+				$.removeClass(shape, 'T3DCube-cube');
+				$.addClass(shape, 'T3DCube-ring');
+			}
+      
+			var stage = document.getElementById('stage');
+			if ($.hasClass(shape, 'T3DCube-ring')){
+				stage.style.transform = 'translateZ(-200px)';
+				stage.style.mozTransform = 'translateZ(-200px)';
+				stage.style.webkitTransform = 'translateZ(-200px)';
+			} else {
+				stage.style.transform = '';
+				stage.style.mozTransform = '';
+				stage.style.webkitTransform = '';
+			}
+		}
+    
+		function toggleBackfaces(){
+			var backfacesVisible = document.getElementById('backfaces').checked;
+			var shape = document.getElementById('shape');
+			if (backfacesVisible){
+				$.addClass(shape, 'T3DCube-backfaces');
+			} else {
+				$.removeClass(shape, 'T3DCube-backfaces');
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="controls">
+		<h1>Animations, Transitions and 3D Transforms</h1>
+		<p>This demo shows some more interesting content using 3D transforms, animations and transitions.
+		Note that you can still select the text on the the elements, even while they are rotating. Transforms elements remain
+        fully interactive.</p>
+		<p>Click Toggle Shape to switch between nested cubes and one big ring. Note how the T3DCube-planes move smoothly to their new locations,
+		even while the whole shape is rotating. You can even interrupt this transition by clicking again, and they move back smoothly.</p>
+		<p>Toggle the Backfaces Visible checkbox to turn backfaces on and off using <code>-webkit-backface-visibility</code>.</p>
+		<div><button onclick="toggleShape()">Toggle Shape</button></div>
+		<div><input type="checkbox" id="backfaces" onclick="toggleBackfaces()" checked=""><label for="backfaces">Backfaces visible</label></div>
+	</div>
+	<div class="T3DCube">
+		<div id="stage" class="T3DCube-stage">
+			<ul id="shape" class="T3DCube-shape T3DCube-cube T3DCube-backfaces">
+				<li class="T3DCube-plane T3DCube-p1">1</li>
+				<li class="T3DCube-plane T3DCube-p2">2</li>
+				<li class="T3DCube-plane T3DCube-p3">3</li>
+				<li class="T3DCube-plane T3DCube-p4">4</li>
+				<li class="T3DCube-plane T3DCube-p5">5</li>
+				<li class="T3DCube-plane T3DCube-p6">6</li>
+				<li class="T3DCube-plane T3DCube-p7">7</li>
+				<li class="T3DCube-plane T3DCube-p8">8</li>
+				<li class="T3DCube-plane T3DCube-p9">9</li>
+				<li class="T3DCube-plane T3DCube-p10">10</li>
+				<li class="T3DCube-plane T3DCube-p11">11</li>
+				<li class="T3DCube-plane T3DCube-p12">12</li>
+			</ul>
+		</div>
+	</div>
+</body> 
+</html>

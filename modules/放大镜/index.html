@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Magnifier</title>
+  <style>
+    canvas{
+	   border: 1px solid #999;
+	   vertical-align: top;
+	}
+	#TPreview{
+	   cursor: crosshair;  
+	   position: relative; 
+	}
+  </style>
+</head>
+<body>
+  <div>
+	<input type='file' name='upload' onchange='imgChange(this)'/><br />
+    <!-- 在FF中必须将预览canvas的position设为absolute或relative -->
+    <canvas id='TPreview' width='450' height='450'></canvas>
+    <canvas id='TResult' width='200' height='200'></canvas>
+  </div>
+</body>
+<script type="text/javascript" src="../../js/TStyle-old.js"></script>
+<script type="text/javascript" src="TMagnifier.js"></script>
+<script type="text/javascript">
+var mag = new TMagnifier(450.0, 200.0, $("#TPreview"), $("#TResult"));
+function imgChange(file){
+	mag.loadImg(file);
+	//mag.loadImg("images/hxsj1.jpg");
+}
+</script>
+</html>
