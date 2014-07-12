@@ -119,5 +119,5 @@ input::-webkit-search-cancel-button {
 }
 
 .displayNone { 
-	display:none; 
+	display:none !important; 
 }
