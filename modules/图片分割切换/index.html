@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>scroll</title>
+        <link rel="stylesheet" href="../../css/TBase.css">
+        <style type="text/css">
+            .img-box {
+            	width: 1024px;
+            	height: 576px;
+				margin: 30px auto;
+				overflow: hidden;
+				
+            }
+
+            .img-full {
+            	width: 1024px;
+            	height: 576px;
+            	position: absolute;
+            	z-index: -1;
+            	background: url(images/1.jpg) no-repeat 0/100%;
+            }
+
+            .img-full.up {
+            	z-index: 1
+            }
+
+            .img-list {
+            	width: 1024px;
+            	height: 96px;
+            	background: url(images/2.jpg) no-repeat 0/100%;
+            	transition: -webkit-transform 0.5s ease-in;
+            }
+
+            .left-in .img-list {
+            	-webkit-transform: translate(0px, 0px);
+            }
+
+            .img1 {
+            	background-position: 0px 0px;
+            	-webkit-transform: translate(-1024px, 0px);
+            	transition-delay: 0s;
+            }
+
+            .img2 {
+            	background-position: 0px -96px;
+            	-webkit-transform: translate(-1024px, 0px);
+            	transition-delay: 0.2s;
+            }
+
+            .img3 {
+            	background-position: 0px -192px;
+            	-webkit-transform: translate(-1024px, 0px);
+            	transition-delay: 0.4s;
+            }
+
+            .img4 {
+            	background-position: 0px -288px;
+            	-webkit-transform: translate(-1024px, 0px);
+            	transition-delay: 0.6s;
+            }
+
+            .img5 {
+            	background-position: 0px -384px;
+            	-webkit-transform: translate(-1024px, 0px);
+            	transition-delay: 0.8s;
+            }
+
+            .img6 {
+            	background-position: 0px -480px;
+            	-webkit-transform: translate(-1024px, 0px);
+            	transition-delay: 1s;
+            }
+        </style>
+    </head>
+<body>
+    <ul class="img-box " id='imgBox'>
+    	<li class="img-full" id='imgFull'></li>
+    	<li class="img-list img1"></li>
+    	<li class="img-list img2"></li>
+    	<li class="img-list img3"></li>
+    	<li class="img-list img4"></li>
+    	<li class="img-list img5"></li>
+    	<li class="img-list img6"></li>
+    </ul>
+</body>
+<script src="../../js/TStyle.js"></script>
+<script>
+var img_list = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg'];
+var cur_index = 0;
+
+function switchImg() {
+	$('#imgBox').addClass('left-in');
+	
+	if (cur_index < img_list.length - 1) {
+		cur_index++;
+	} else {
+		cur_index = 0;
+	}
+
+	setTimeout(function() {
+		$('#imgFull').css('background-image', 'url(' + img_list[cur_index] + ')');
+		$('#imgFull').addClass('up');
+
+		// 延迟一秒 避免闪烁效果
+		setTimeout(function() {
+			var index = cur_index + 1 < img_list.length ? cur_index + 1 : 0;
+			$('#imgBox').removeClass('left-in');
+
+			$.each($('.img-list'), function(node) {
+				node.css('background-image', 'url(' + img_list[index] + ')');
+			});
+
+			setTimeout(function() {
+				$('#imgFull').removeClass('up');
+				switchImg();
+			}, 2000);
+		}, 1000);
+	}, 2000);	
+	
+}
+
+window.onload = function() {
+	setTimeout(switchImg, 1000);
+}
+</script>
+</html>
