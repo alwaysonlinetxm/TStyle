@@ -702,11 +702,12 @@ AjaxRequest.sendError = function() {
 // Send an Ajax request to the server  type, url, asyn, handler, dataType, timeout, postDataType, postData, beforeSend, success, error
 AjaxRequest.prototype.send = function(opt) {
     var self = this;
+
     if (self.request != null) {
         // Kill the previous request
         self.request.abort();
         //set timeout
-        if (opt.timeout){
+        if (opt.timeout) {
             self.timeout = setTimeout(function() {
                 self.request.abort();
                 opt.error(self.request, 'timeout');
@@ -718,14 +719,12 @@ AjaxRequest.prototype.send = function(opt) {
         //set dataType
         opt.dataType = opt.dataType ? opt.dataType : 'text';
         //set global
-        if (opt.global){
-            self.global = opt.global;
-        } else {
-            self.global = false;
-        }
+        self.global = opt.global ? opt.global : false;
+        //run sendBefore
         if (self.global && typeof AjaxRequest.sendBefore == 'function'){
             AjaxRequest.sendBefore({type: 'ajaxSend'}, self.request, opt);
         }
+        //run beforeSend
         if (opt.beforeSend){
             opt.beforeSend();
         }
@@ -733,8 +732,8 @@ AjaxRequest.prototype.send = function(opt) {
             self.request.onreadystatechange = function() {
                 if (self.getReadyState() == 4) {
                     var _status = self.getStatus();
+                    clearTimeout(self.timeout);
                     if ((_status >= 200 && _status < 300) || _status == 304) { 
-                        clearTimeout(self.timeout);
                         switch (opt.dataType) {
                             case 'text': opt.success(self.getResponseText(), 'success');
                                 break;
@@ -746,6 +745,18 @@ AjaxRequest.prototype.send = function(opt) {
                         if (self.global && typeof AjaxRequest.sendSuccess == 'function'){
                             AjaxRequest.sendSuccess({type: 'ajaxSuccess'}, self.request, opt);
                         }
+                    } else {
+                        switch (opt.dataType) {
+                            case 'text': opt.error(self.request, _status, self.getResponseText());
+                                break;
+                            case 'xml': opt.error(self.request, _status, self.getResponseXML());
+                                break;
+                            case 'json': opt.error(self.request, _status, JSON.parse(self.getResponseText()));
+                                break;
+                        }
+                        if (self.global && typeof AjaxRequest.sendError == 'function') {
+                            AjaxRequest.sendError({type: 'ajaxError'}, self.request, opt);
+                        }
                     }
                 }
             }
@@ -755,6 +766,7 @@ AjaxRequest.prototype.send = function(opt) {
                 self.request.send(null);
             } else {
                 // Send a POST request; the last argument is data
+                opt.postDataType = opt.postDataType ? opt.postDataType : 'application/x-www-form-urlencoded';
                 self.request.setRequestHeader("Content-Type", opt.postDataType);
                 self.request.send(opt.postData);
             }
