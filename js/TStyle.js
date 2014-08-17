@@ -735,11 +735,11 @@ AjaxRequest.prototype.send = function(opt) {
                     clearTimeout(self.timeout);
                     if ((_status >= 200 && _status < 300) || _status == 304) { 
                         switch (opt.dataType) {
-                            case 'text': opt.success(self.getResponseText(), 'success');
+                            case 'text': opt.success(self.getResponseText(), _status);
                                 break;
-                            case 'xml': opt.success(self.getResponseXML(), 'success');
+                            case 'xml': opt.success(self.getResponseXML(), _status);
                                 break;
-                            case 'json': opt.success(JSON.parse(self.getResponseText()), 'success');
+                            case 'json': opt.success(JSON.parse(self.getResponseText()), _status);
                                 break;
                         }
                         if (self.global && typeof AjaxRequest.sendSuccess == 'function'){
