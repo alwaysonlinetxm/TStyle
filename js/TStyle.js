@@ -715,7 +715,7 @@ AjaxRequest.prototype.send = function(opt) {
             }, opt.timeout);
         }
         //set asyn
-        opt.asyn = opt.asyn ? opt.asyn : true;
+        opt.asyn = opt.asyn == undefined ? true : opt.asyn;
         //set dataType
         opt.dataType = opt.dataType ? opt.dataType : 'text';
         //set global
@@ -751,7 +751,7 @@ AjaxRequest.prototype.send = function(opt) {
                                 break;
                             case 'xml': opt.error(self.request, _status, self.getResponseXML());
                                 break;
-                            case 'json': opt.error(self.request, _status, JSON.parse(self.getResponseText()));
+                            case 'json': opt.error(self.request, _status, self.getResponseText());
                                 break;
                         }
                         if (self.global && typeof AjaxRequest.sendError == 'function') {
